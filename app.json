@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/saturday-register/index",
+    "pages/leave-application/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Văn phòng điện tử Pha Lê Group",
+    "navigationBarTextStyle":"black"
+  }
+}

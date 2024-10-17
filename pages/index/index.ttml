@@ -1,0 +1,35 @@
+<view tt:if="{{isLogin == false}}">
+  <view class="loading">
+    <image src="../asset/index/phale-logo.png"></image>
+  </view>
+</view>
+<view tt:else class="container">
+  <view class="body">
+    <view class="user-info">
+      <view class="user-info-attr">
+        <!-- Applet image component, for details, please refer to /ssl:ttdoc/uYjL24iN/uUzNuUzNuUzN -->
+        <image class="user-info-attr-img" tt:if="{{isLogin}}" src="{{userInfo.avatarUrl}}" />
+        <!-- Use tt:if to determine whether the current user is logged in. If the current user is logged in, then display the user's avatar; if not logged in, display the gray background -->
+        <view tt:else class="user-info-attr-img"></view>
+      </view>
+      <view class="user-info-base">
+        <view tt:if="{{isLogin}}">
+          <view class="info-name">Xin chào, {{userInfo.nickName}}</view>
+          <view  style="font-size: 12px; margin-left: 10px; font-style: italic;">Chúc bạn một ngày làm việc hiệu quả</view>
+          <view class="info-sign">{{userSign}}</view>
+        </view>
+        <view tt:else bindtap="toLogin">
+          {{notLogin}}
+        </view>
+      </view>
+    </view>     
+    <view class="intro-text">BẠN CẦN</view>
+    <button bindtap="saturdayRequest" class="register-button"><image style="height: 25px; width: 25px;" src="../asset/index/saturday-request.png"></image>Đăng ký làm thứ 7</button>
+    <button bindtap="redirect" class="register-button"><image style="height: 25px; width: 25px;" src="../asset/index/leave-request.png"></image>Đăng ký nghỉ phép</button>
+    <button bindtap="dangkilamthem" class="register-button"><image style="height: 25px; width: 25px;" src="../asset/index/working-request.png"></image>Đăng ký làm thêm</button>
+    <button bindtap="dangkibosungchamcong" class="register-button"><image style="height: 25px; width: 25px;" src="../asset/index/attendance-request.png"></image>Đăng ký bổ sung chấm công</button>
+    <button bindtap="dangkixecongtac" class="register-button"><image style="height: 25px; width: 25px;" src="../asset/index/bussiness-trip-request.png"></image>Đăng ký xe công tác/ Báo cơm</button>
+    <button bindtap="dangkikhachlamviec" class="register-button"><image style="height: 25px; width: 25px;" src="../asset/index/guest-request.png"></image>Đăng ký khách làm việc</button>
+    <button bindtap="dangkyhuycom" class="register-button"><image style="height: 25px; width: 25px;" src="../asset/index/meal-request.png"></image>Đăng ký - Hủy cơm văn phòng</button>  
+  </view>
+</view>

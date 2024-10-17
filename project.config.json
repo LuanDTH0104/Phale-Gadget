@@ -1,0 +1,11 @@
+{
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true
+  },
+  "appid": "cli_a78e0e4992b8d02f",
+  "projectname": "Văn phòng điện tử Pha Lê Group"
+}

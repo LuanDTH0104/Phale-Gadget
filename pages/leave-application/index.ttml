@@ -1,0 +1,46 @@
+<view class="container" tt:if="{{isLoading == true}}">
+  <view class="loader"></view>
+</view>
+<view class="body" tt:elif="{{isLoading == false}}">
+  <view class="user-info">
+    <view class="user-info-attr">
+      <image class="user-info-attr-img" tt:if="{{isLogin}}" src="{{userInfo.avatarUrl}}" />
+      <view tt:else class="user-info-attr-img"></view>
+    </view>
+    <view class="user-info-base">
+      <view tt:if="{{isLogin}}">
+        <view style="margin-left:10px;" class="info-name">Xin chào, {{userInfo.nickName}}</view>
+        <view style="font-size: 12px; margin-left: 10px; font-style: italic;">Chúc bạn một ngày làm việc hiệu quả</view>
+        <view class="info-sign">{{userSign}}</view>
+      </view>
+      <view tt:else bindtap="toLogin">
+        {{notLogin}}
+      </view>
+    </view>
+  </view>
+  <view style="text-align: center; font-size: 30px;">DANH SÁCH NGHỈ PHÉP</view>
+  <view class="leave-application">
+    <view class="t-header">Loại phép</view>
+    <view class="t-header"> 
+      Từ ngày
+    </view>
+    <view class="t-header">
+      Đến ngày
+    </view>
+  </view>
+  <block tt:for="{{offDays}}">
+    <view class="leave-application">
+      <view>{{item.typeOfApplication}}</view>
+      <view>
+        {{item.startOffDay}}
+      </view>
+      <view>
+        {{item.endOffDay}}
+      </view>
+    </view>
+  </block>
+  <view>
+    Tổng số ngày nghỉ: {{totalOffDays}}
+  </view>
+  <button id="register-button" bindtap="changeSign">Đăng kí nghỉ phép</button>
+</view>
